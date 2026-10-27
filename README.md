@@ -58,17 +58,34 @@ Opening `index.html` directly from disk also renders the page, but a local serve
 
 Everything is in `index.html`; each part of the page is a `<section>` with an id:
 
-| Section | id | Notes |
-|---|---|---|
-| Title, authors, venue, link buttons | (first `section.hero`) | Paper → arXiv 2610.34876 |
-| Overview figure | `overview` | `overview1.png` |
-| Abstract | `abstract` | |
-| Method (Confidence-Decomposed Routing) | `method` | `overview2.png` and three cue cards |
-| Quantitative results | `results` | Table 1 and Table 2 images, then the two ablation tables side by side (`.figure-row`, stacked below 1024px) |
-| Qualitative results | `qualitative` | LEVIR-MCI and WHU-CDC figures |
-| BibTeX | `bibtex` | |
-| Acknowledgements | `acknowledgements` | |
-| Logos | `logos` | Kyung Hee University and lab logos |
+| Section | id | Background | Notes |
+|---|---|---|---|
+| Title, authors, venue, link buttons | (first `section.hero`) | white | Paper → arXiv 2610.34876 |
+| Overview figure | `overview` | white | `overview1.png` |
+| Abstract | `abstract` | grey | no description line |
+| Confidence-Decomposed Routing | `method` | white | `overview2.png` and three cue cards |
+| Quantitative Results | `results` | grey | Table 1 (LEVIR-MCI), Table 2 (WHU-CDC) |
+| Ablation Study | `ablation` | white | Table 3(a) and Table 4(b) side by side (`.figure-row`, stacked below 1024px) |
+| Qualitative Results | `qualitative` | grey | LEVIR-MCI and WHU-CDC figures |
+| BibTeX | `bibtex` | white | copy button in the code block |
+| Acknowledgements | `acknowledgements` | grey | compact section with the Kyung Hee University and lab logos |
+
+Every content section uses the same structure, so a new one can be added by copying an existing section:
+
+```html
+<section class="section page-section" id="new-section">        <!-- add "hero is-light" for a grey background -->
+  <div class="container is-max-widescreen">                     <!-- is-max-desktop for text-only sections -->
+    <header class="section-header">
+      <h2 class="title is-3">Section Title</h2>
+      <p class="section-description">One or two short lines.</p>
+    </header>
+    <div class="section-text content has-text-justified"><p>Body text.</p></div>
+    <!-- figures -->
+  </div>
+</section>
+```
+
+Keep the white / grey alternation when sections are added or removed. Table captions go above the table (`figcaption.table-caption` before the image: a bold title line, then the description); figure captions go below the figure. On phones, cards with `is-scrollable` keep a minimum width (`--min-w`, default 760px) and scroll horizontally inside the card.
 
 The title and abstract follow the arXiv version ([2610.34876](https://arxiv.org/abs/2610.34876)). If the title changes, update every copy of it: the hero subtitle, `<title>`, the `title` / `og:title` / `twitter:title` meta tags, `citation_title`, the JSON-LD `headline`, and the BibTeX entry. Optional extras (Twitter handles, a "More Works" list) are marked with `TODO (optional)` comments.
 
@@ -78,7 +95,7 @@ The title and abstract follow the arXiv version ([2610.34876](https://arxiv.org/
 2. Add a figure block; wrapping the image in `a.figure-card.zoomable` gives the card style and click-to-enlarge:
    ```html
    <figure class="figure">
-     <a class="figure-card zoomable" href="static/images/ablation_routing.png" title="Click to enlarge">
+     <a class="figure-card zoomable is-scrollable" href="static/images/ablation_routing.png" title="Click to enlarge">
        <img src="static/images/ablation_routing.png" alt="Short description of the figure" loading="lazy">
      </a>
      <figcaption class="figure-caption"><strong>Figure title.</strong> Caption text.</figcaption>

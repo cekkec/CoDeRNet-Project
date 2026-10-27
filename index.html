@@ -245,15 +245,13 @@
 <!-- End teaser figure -->
 
 <!-- Paper abstract -->
-<section class="section hero is-light" id="abstract">
+<section class="section page-section hero is-light" id="abstract">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>Change Detection &amp; Captioning (CDC) aims to jointly localize changed regions and describe their semantic content from bi-temporal remote sensing images. While recent approaches have demonstrated the effectiveness of unified modeling, they primarily rely on shared representations or jointly optimized architectures, leaving task-specific communication under heterogeneous supervision less explored. However, detection and captioning differ fundamentally in their supervision granularity, leading to heterogeneous representations with uneven reliability across tasks and spatial locations. In this paper, we reformulate CDC as a selective information routing problem between heterogeneous task branches, where the key challenge is to determine when and where information should be transferred. To this end, we propose CoDeRNet, a unified framework that preserves task-specific representations while enabling bidirectional exchange of complementary information. CoDeRNet introduces a Confidence-Decomposed Routing (CoDeR) mechanism, which decomposes the routing condition into receiver-side need for support and sender-side reliability cues to guide selective transfer. Experiments on LEVIR-MCI and WHU-CDC show that CoDeRNet achieves strong overall CDC performance, particularly improving caption generation while preserving competitive change localization. Extensive analyses further show that the benefits arise not merely from joint learning or generic cross-task communication, but from explicitly modeling selective cross-task information routing. These results highlight the importance of conditional information transfer for unified CDC under heterogeneous supervision.</p>
-        </div>
-      </div>
+    <header class="section-header">
+      <h2 class="title is-3">Abstract</h2>
+    </header>
+    <div class="section-text content has-text-justified">
+      <p>Change Detection &amp; Captioning (CDC) aims to jointly localize changed regions and describe their semantic content from bi-temporal remote sensing images. While recent approaches have demonstrated the effectiveness of unified modeling, they primarily rely on shared representations or jointly optimized architectures, leaving task-specific communication under heterogeneous supervision less explored. However, detection and captioning differ fundamentally in their supervision granularity, leading to heterogeneous representations with uneven reliability across tasks and spatial locations. In this paper, we reformulate CDC as a selective information routing problem between heterogeneous task branches, where the key challenge is to determine when and where information should be transferred. To this end, we propose CoDeRNet, a unified framework that preserves task-specific representations while enabling bidirectional exchange of complementary information. CoDeRNet introduces a Confidence-Decomposed Routing (CoDeR) mechanism, which decomposes the routing condition into receiver-side need for support and sender-side reliability cues to guide selective transfer. Experiments on LEVIR-MCI and WHU-CDC show that CoDeRNet achieves strong overall CDC performance, particularly improving caption generation while preserving competitive change localization. Extensive analyses further show that the benefits arise not merely from joint learning or generic cross-task communication, but from explicitly modeling selective cross-task information routing. These results highlight the importance of conditional information transfer for unified CDC under heterogeneous supervision.</p>
     </div>
   </div>
 </section>
@@ -261,52 +259,49 @@
 
 
 <!-- Method -->
-<section class="section" id="method">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Confidence-Decomposed Routing</h2>
-        <div class="content has-text-justified">
-          <p>CoDeR selectively modulates cross-task information transfer at each spatial location. Rather than relying on a single interaction weight, it decomposes the routing condition into two learned cues: receiver-side need for support and sender-side reliability. Their multiplicative combination produces a soft routing mask that controls the strength of residual information transfer.</p>
-        </div>
-      </div>
+<section class="section page-section" id="method">
+  <div class="container is-max-widescreen">
+    <header class="section-header">
+      <h2 class="title is-3">Confidence-Decomposed Routing</h2>
+      <p class="section-description">CoDeR selectively regulates cross-task information transfer based on receiver-side need and sender-side reliability.</p>
+    </header>
+    <div class="section-text content has-text-justified">
+      <p>CoDeR selectively modulates cross-task information transfer at each spatial location. Rather than relying on a single interaction weight, it decomposes the routing condition into two learned cues: receiver-side need for support and sender-side reliability. Their multiplicative combination produces a soft routing mask that controls the strength of residual information transfer.</p>
     </div>
 
     <figure class="figure method-figure">
-      <a class="figure-card zoomable" href="static/images/overview2.png" title="Click to enlarge">
+      <a class="figure-card zoomable is-scrollable" href="static/images/overview2.png" title="Click to enlarge">
         <img src="static/images/overview2.png" alt="Confidence-Decomposed Routing (CoDeR): the receiver-side need for support and the sender-side reliable evidence are combined into a routing mask that gates the transfer of the source feature into the target feature" width="1783" height="454" loading="lazy">
       </a>
     </figure>
 
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <div class="columns method-cards has-text-left">
-          <div class="column">
-            <div class="box">
-              <p class="heading">Receiver side</p>
-              <p class="title is-6 mb-2">Where is support needed?</p>
-              <p>A need-for-support map is estimated from the receiving branch. Regions where the receiver is already confident are protected from being overwritten.</p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="box">
-              <p class="heading">Sender side</p>
-              <p class="title is-6 mb-2">Where is the source reliable?</p>
-              <p>A reliability map is estimated from the sending branch. Only evidence the sender is confident about is allowed to travel.</p>
-            </div>
-          </div>
-          <div class="column">
-            <div class="box">
-              <p class="heading">Conditional transfer</p>
-              <p class="title is-6 mb-2">Should transfer occur?</p>
-              <p>The routing mask combines need and reliability, and it gates a lightweight residual transfer of the source feature into the receiving branch.</p>
-            </div>
+    <div class="section-text">
+      <div class="columns method-cards has-text-left">
+        <div class="column">
+          <div class="box">
+            <p class="heading">Receiver side</p>
+            <p class="title is-6 mb-2">Where is support needed?</p>
+            <p>A need-for-support map is estimated from the receiving branch. Regions where the receiver is already confident are protected from being overwritten.</p>
           </div>
         </div>
+        <div class="column">
+          <div class="box">
+            <p class="heading">Sender side</p>
+            <p class="title is-6 mb-2">Where is the source reliable?</p>
+            <p>A reliability map is estimated from the sending branch. Only evidence the sender is confident about is allowed to travel.</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <p class="heading">Conditional transfer</p>
+            <p class="title is-6 mb-2">Should transfer occur?</p>
+            <p>The routing mask combines need and reliability, and it gates a lightweight residual transfer of the source feature into the receiving branch.</p>
+          </div>
+        </div>
+      </div>
 
-        <div class="content has-text-justified">
-          <p>Routing is applied in both directions, caption&nbsp;→&nbsp;detection and detection&nbsp;→&nbsp;caption, at designated feature levels before the task decoders. Complementarity is therefore defined operationally by the sender–receiver state rather than as an intrinsic property of a feature, and the detection and captioning representations, together with the routing cues, are optimized jointly through the two task losses without a separate post-hoc integration model.</p>
-        </div>
+      <div class="content has-text-justified">
+        <p>Routing is applied in both directions, caption&nbsp;→&nbsp;detection and detection&nbsp;→&nbsp;caption, at designated feature levels before the task decoders. Complementarity is therefore defined operationally by the sender–receiver state rather than as an intrinsic property of a feature, and the detection and captioning representations, together with the routing cues, are optimized jointly through the two task losses without a separate post-hoc integration model.</p>
       </div>
     </div>
   </div>
@@ -315,63 +310,74 @@
 
 
 <!-- Quantitative results -->
-<section class="section hero is-light" id="results">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Quantitative Results</h2>
-        <div class="content has-text-justified">
-          <p>Comparison with change detection methods, change captioning methods, and unified detection-and-captioning frameworks on the test splits of LEVIR-MCI and WHU-CDC. Bold marks the best score and underline the second best.</p>
-        </div>
-      </div>
+<section class="section page-section hero is-light" id="results">
+  <div class="container is-max-widescreen">
+    <header class="section-header">
+      <h2 class="title is-3">Quantitative Results</h2>
+      <p class="section-description">We evaluate CoDeRNet against existing methods on LEVIR-MCI and WHU-CDC.</p>
+    </header>
+    <div class="section-text content has-text-justified">
+      <p>Comparison with change detection methods, change captioning methods, and unified detection-and-captioning frameworks on the test splits of LEVIR-MCI and WHU-CDC. Bold marks the best score and underline the second best.</p>
     </div>
 
     <figure class="figure">
-      <a class="figure-card zoomable" href="static/images/table1_levir_mci.png" title="Click to enlarge">
+      <figcaption class="figure-caption table-caption"><strong>Table 1. LEVIR-MCI</strong> 3-class mIoU (background / road / building) and captioning metrics. CoDeRNet obtains the best score on every metric among the compared methods.</figcaption>
+      <a class="figure-card zoomable is-scrollable" href="static/images/table1_levir_mci.png" title="Click to enlarge">
         <img src="static/images/table1_levir_mci.png" alt="Table 1: comparison on LEVIR-MCI with change detection, change captioning, and unified methods; CoDeRNet reaches 87.79 mIoU and the best captioning scores" width="2278" height="1051" loading="lazy">
       </a>
-      <figcaption class="figure-caption"><strong>Table 1. LEVIR-MCI.</strong> 3-class mIoU (background / road / building) and captioning metrics. CoDeRNet obtains the best score on every metric among the compared methods.</figcaption>
     </figure>
 
     <figure class="figure">
-      <a class="figure-card zoomable" href="static/images/table2_whu_cdc.png" title="Click to enlarge">
+      <figcaption class="figure-caption table-caption"><strong>Table 2. WHU-CDC</strong> Change-class IoU and captioning metrics. CoDeRNet achieves the best IoU, METEOR, ROUGE-L and CIDEr-D, and the second-best BLEU scores.</figcaption>
+      <a class="figure-card zoomable is-scrollable" href="static/images/table2_whu_cdc.png" title="Click to enlarge">
         <img src="static/images/table2_whu_cdc.png" alt="Table 2: comparison on WHU-CDC with change detection, change captioning, and unified methods; CoDeRNet reaches 90.25 IoU and the best METEOR, ROUGE-L, and CIDEr-D" width="2276" height="1039" loading="lazy">
       </a>
-      <figcaption class="figure-caption"><strong>Table 2. WHU-CDC.</strong> Change-class IoU and captioning metrics. CoDeRNet achieves the best IoU, METEOR, ROUGE-L and CIDEr-D, and the second-best BLEU scores.</figcaption>
     </figure>
-
-    <!-- --aspect = image width / height, so both tables get the same height side by side -->
-    <div class="figure-row">
-    <figure class="figure" style="--aspect: 4.710">
-      <a class="figure-card zoomable" href="static/images/abl1.png" title="Click to enlarge">
-        <img src="static/images/abl1.png" alt="Ablation of joint training and CoDeR: segmentation only, captioning only, joint training, and joint training with CoDeR, with mIoU, BLEU-4, METEOR, ROUGE-L and CIDEr-D" width="1135" height="241" loading="lazy">
-      </a>
-      <figcaption class="figure-caption">We examine the contributions of joint training and CoDeR to change detection and captioning performance.</figcaption>
-    </figure>
-
-    <figure class="figure" style="--aspect: 3.752">
-      <a class="figure-card zoomable" href="static/images/abl2.png" title="Click to enlarge">
-        <img src="static/images/abl2.png" alt="Comparison of cross-task interaction operators: Co-Attn, Cross-Attn, Exchange, Gating, and CoDeR, with mIoU, BLEU-4, METEOR, ROUGE-L and CIDEr-D" width="833" height="222" loading="lazy">
-      </a>
-      <figcaption class="figure-caption">We compare CoDeR with alternative cross-task interaction operators to evaluate the effectiveness of selective information routing.</figcaption>
-    </figure>
-    </div>
   </div>
 </section>
 <!-- End quantitative results -->
 
 
-<!-- Qualitative results -->
-<section class="section" id="qualitative">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Qualitative Results</h2>
-      </div>
+<!-- Ablation study -->
+<section class="section page-section" id="ablation">
+  <div class="container is-max-widescreen">
+    <header class="section-header">
+      <h2 class="title is-3">Ablation Study</h2>
+      <p class="section-description">We investigate the contributions of joint training and CoDeR, and compare CoDeR with alternative interaction operators.</p>
+    </header>
+
+    <!-- --aspect = image width / height, so both tables get the same height side by side;
+         --min-w = minimum table width on phones (the card scrolls horizontally) -->
+    <div class="figure-row">
+      <figure class="figure" style="--aspect: 4.710; --min-w: 560px">
+        <figcaption class="figure-caption table-caption"><strong>Table 3(a). Joint Training and CoDeR</strong> We examine the individual contributions of joint training and CoDeR to both tasks.</figcaption>
+        <a class="figure-card zoomable is-scrollable" href="static/images/abl1.png" title="Click to enlarge">
+        <img src="static/images/abl1.png" alt="Ablation of joint training and CoDeR: segmentation only, captioning only, joint training, and joint training with CoDeR, with mIoU, BLEU-4, METEOR, ROUGE-L and CIDEr-D" width="1135" height="241" loading="lazy">
+      </a>
+      </figure>
+
+      <figure class="figure" style="--aspect: 3.752; --min-w: 480px">
+        <figcaption class="figure-caption table-caption"><strong>Table 4(b). Interaction Operators</strong> We compare CoDeR with alternative cross-task interaction operators to assess the effectiveness of selective routing.</figcaption>
+        <a class="figure-card zoomable is-scrollable" href="static/images/abl2.png" title="Click to enlarge">
+        <img src="static/images/abl2.png" alt="Comparison of cross-task interaction operators: Co-Attn, Cross-Attn, Exchange, Gating, and CoDeR, with mIoU, BLEU-4, METEOR, ROUGE-L and CIDEr-D" width="833" height="222" loading="lazy">
+      </a>
+      </figure>
     </div>
+  </div>
+</section>
+<!-- End ablation study -->
+
+
+<!-- Qualitative results -->
+<section class="section page-section hero is-light" id="qualitative">
+  <div class="container is-max-widescreen">
+    <header class="section-header">
+      <h2 class="title is-3">Qualitative Results</h2>
+      <p class="section-description">We present visual comparisons of change localization and caption generation on both benchmarks.</p>
+    </header>
 
     <figure class="figure">
-      <a class="figure-card zoomable" href="static/images/qualitative_levir_mci.png" title="Click to enlarge">
+      <a class="figure-card zoomable is-scrollable" href="static/images/qualitative_levir_mci.png" title="Click to enlarge">
         <img src="static/images/qualitative_levir_mci.png" alt="Qualitative comparison on LEVIR-MCI test images: inputs, ground-truth mask, MCINet, CoDeRNet, and the corresponding captions" width="2264" height="1200" loading="lazy">
       </a>
       <figcaption class="figure-caption">
@@ -384,7 +390,7 @@
     </figure>
 
     <figure class="figure">
-      <a class="figure-card zoomable" href="static/images/qualitative_whu.png" title="Click to enlarge">
+      <a class="figure-card zoomable is-scrollable" href="static/images/qualitative_whu.png" title="Click to enlarge">
         <img src="static/images/qualitative_whu.png" alt="Qualitative comparison on WHU-CDC test images: inputs, ground-truth mask, MCINet, CoDeRNet, and the corresponding captions" width="2117" height="1650" loading="lazy">
       </a>
       <figcaption class="figure-caption">
@@ -400,15 +406,17 @@
 
 
 <!--BibTex citation -->
-  <section class="section hero is-light" id="bibtex">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button type="button" class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
+<section class="section page-section" id="bibtex">
+  <div class="container is-max-desktop">
+    <header class="section-header">
+      <h2 class="title is-3">BibTeX</h2>
+      <p class="section-description">If you find our work useful, please consider citing our paper.</p>
+    </header>
+    <div class="code-block content">
+      <button type="button" class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+        <i class="fas fa-copy"></i>
+        <span class="copy-text">Copy</span>
+      </button>
       <pre id="bibtex-code"><code>@inproceedings{cho2026codernet,
   title     = {CoDeRNet: Selective Cross-Task Routing under Heterogeneous Supervision
                for Change Detection and Captioning},
@@ -417,30 +425,25 @@
   year      = {2026}
 }</code></pre>
     </div>
+  </div>
 </section>
 <!--End BibTex citation -->
 
 
-<!-- Acknowledgements -->
-<section class="section" id="acknowledgements">
-  <div class="container is-max-desktop content">
-    <h2 class="title">Acknowledgements</h2>
-    <p class="acknowledgements">The data loading, the LEVIR-MCI preprocessing and the evaluation code are adapted from <a href="https://github.com/Chen-Yang-Liu/Change-Agent" target="_blank" rel="noopener">Change-Agent</a>; the captioning scorers come from <a href="https://github.com/tylin/coco-caption" target="_blank" rel="noopener">coco-caption</a>. LEVIR-MCI is available on <a href="https://huggingface.co/datasets/lcybuaa/LEVIR-MCI/tree/main" target="_blank" rel="noopener">Hugging Face</a> and WHU-CDC on <a href="https://www.kaggle.com/datasets/yuehaozhang1109/whu-cdc/data" target="_blank" rel="noopener">Kaggle</a>. The code is released under the MIT License.</p>
-  </div>
-</section>
-<!-- End acknowledgements -->
-
-
-<!-- Affiliation logos -->
-<section class="section logos-section" id="logos">
+<!-- Acknowledgements and affiliation logos -->
+<section class="section page-section is-compact hero is-light" id="acknowledgements">
   <div class="container is-max-desktop">
+    <header class="section-header">
+      <h2 class="title is-3">Acknowledgements</h2>
+    </header>
+    <p class="section-text acknowledgements">The data loading, the LEVIR-MCI preprocessing and the evaluation code are adapted from <a href="https://github.com/Chen-Yang-Liu/Change-Agent" target="_blank" rel="noopener">Change-Agent</a>; the captioning scorers come from <a href="https://github.com/tylin/coco-caption" target="_blank" rel="noopener">coco-caption</a>. LEVIR-MCI is available on <a href="https://huggingface.co/datasets/lcybuaa/LEVIR-MCI/tree/main" target="_blank" rel="noopener">Hugging Face</a> and WHU-CDC on <a href="https://www.kaggle.com/datasets/yuehaozhang1109/whu-cdc/data" target="_blank" rel="noopener">Kaggle</a>. The code is released under the MIT License.</p>
     <div class="logo-row">
       <img src="static/images/khu_logo.png" alt="Kyung Hee University" width="1795" height="515" loading="lazy">
       <img src="static/images/ami_lab_logo.png" alt="Augmented Intelligence Lab" width="2950" height="565" loading="lazy">
     </div>
   </div>
 </section>
-<!-- End affiliation logos -->
+<!-- End acknowledgements and affiliation logos -->
   </main>
 
 

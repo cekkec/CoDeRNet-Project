@@ -3,93 +3,85 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
+  <!--
+    TODO before the camera-ready release (search for "TODO" in this file):
+      1. Full paper title: hero <h1>/subtitle, citation_title, JSON-LD headline, BibTeX title
+      2. Paper / arXiv links: the two disabled buttons in .publication-links (+ citation_pdf_url)
+      3. Abstract: replace the draft with the camera-ready abstract
+  -->
+
   <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="title" content="CoDeRNet — Confidence-Decomposed Routing for Change Detection and Captioning">
+  <meta name="description" content="CoDeRNet (NeurIPS 2026): joint change detection and change captioning on bi-temporal remote-sensing images with Confidence-Decomposed Routing.">
+  <meta name="keywords" content="CoDeRNet, Confidence-Decomposed Routing, change detection, change captioning, remote sensing, bi-temporal images, LEVIR-MCI, WHU-CDC, NeurIPS 2026">
+  <meta name="author" content="Eunki Cho, Hyeon Bae Kim, Seong Tae Kim">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
-  
+  <link rel="canonical" href="https://cekkec.github.io/CoDeRNet-Project/">
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:site_name" content="CoDeRNet">
+  <meta property="og:title" content="CoDeRNet — Confidence-Decomposed Routing for Change Detection and Captioning">
+  <meta property="og:description" content="NeurIPS 2026. Joint change detection and change captioning on bi-temporal remote-sensing images.">
+  <meta property="og:url" content="https://cekkec.github.io/CoDeRNet-Project/">
+  <meta property="og:image" content="https://cekkec.github.io/CoDeRNet-Project/static/images/social_preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="og:image:alt" content="CoDeRNet architecture overview">
+  <meta property="article:author" content="Eunki Cho">
   <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
+  <meta property="article:tag" content="change detection">
+  <meta property="article:tag" content="change captioning">
+  <meta property="article:tag" content="remote sensing">
 
   <!-- Twitter -->
+  <!-- TODO (optional): add twitter:site / twitter:creator if the lab or authors have handles -->
   <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta name="twitter:title" content="CoDeRNet — Confidence-Decomposed Routing for Change Detection and Captioning">
+  <meta name="twitter:description" content="NeurIPS 2026. Joint change detection and change captioning on bi-temporal remote-sensing images.">
+  <meta name="twitter:image" content="https://cekkec.github.io/CoDeRNet-Project/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="CoDeRNet architecture overview">
 
   <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
+  <!-- TODO: citation_title = final paper title; add citation_pdf_url once the paper PDF is public -->
+  <meta name="citation_title" content="CoDeRNet: Confidence-Decomposed Routing for Joint Change Detection and Change Captioning">
+  <meta name="citation_author" content="Cho, Eunki">
+  <meta name="citation_author" content="Kim, Hyeon Bae">
+  <meta name="citation_author" content="Kim, Seong Tae">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="Advances in Neural Information Processing Systems (NeurIPS)">
+
   <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
   <meta name="msapplication-TileColor" content="#2563eb">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
+
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
 
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
+  <title>CoDeRNet — Confidence-Decomposed Routing for Change Detection and Captioning</title>
+
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
+  <link rel="apple-touch-icon" href="static/images/apple-touch-icon.png">
+
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
+
   <!-- Non-critical CSS - Load asynchronously -->
   <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
+
   <!-- Fallback for browsers that don't support preload -->
   <noscript>
     <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
@@ -97,83 +89,73 @@
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
-  
+
   <!-- Fonts - Optimized loading -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  
+
   <!-- Structured Data for Academic Papers -->
+  <!-- TODO: headline = final paper title -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "headline": "CoDeRNet: Confidence-Decomposed Routing for Joint Change Detection and Change Captioning",
+    "description": "CoDeRNet (NeurIPS 2026): joint change detection and change captioning on bi-temporal remote-sensing images with Confidence-Decomposed Routing.",
     "author": [
       {
         "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
+        "name": "Eunki Cho",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "Kyung Hee University"
         }
       },
       {
         "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
+        "name": "Hyeon Bae Kim",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "Kyung Hee University"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Seong Tae Kim",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Kyung Hee University"
         }
       }
     ],
-    "datePublished": "2024-01-01",
+    "datePublished": "2026",
     "publisher": {
       "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
+      "name": "Advances in Neural Information Processing Systems (NeurIPS)"
     },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
+    "url": "https://cekkec.github.io/CoDeRNet-Project/",
+    "image": "https://cekkec.github.io/CoDeRNet-Project/static/images/social_preview.png",
+    "keywords": ["change detection", "change captioning", "remote sensing", "bi-temporal images", "Confidence-Decomposed Routing"],
     "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
     "mainEntity": {
       "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
+      "@id": "https://cekkec.github.io/CoDeRNet-Project/"
     },
     "about": [
       {
         "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
+        "name": "Change detection"
       },
       {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
+        "@type": "Thing",
+        "name": "Change captioning"
       }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
     ]
   }
   </script>
@@ -182,57 +164,12 @@
 
 
   <!-- Scroll to Top Button -->
-  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+  <button type="button" class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
+  <!-- TODO (optional): the template's "More Works" dropdown was removed; restore it from the
+       template if a list of related works from the lab should be shown. -->
 
   <main id="main-content">
   <section class="hero">
@@ -240,54 +177,46 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <!-- TODO: replace with the full paper title -->
+            <h1 class="title is-1 publication-title">CoDeRNet</h1>
+            <p class="subtitle is-4 publication-subtitle">Confidence-Decomposed Routing for Joint Change Detection and Change Captioning in Bi-temporal Remote-Sensing Images</p>
             <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+              <span class="author-block">Eunki Cho,</span>
+              <span class="author-block">Hyeon Bae Kim,</span>
+              <span class="author-block">Seong Tae Kim</span>
+            </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Kyung Hee University, Republic of Korea</span><br>
+              <span class="author-block publication-email">{cekkec, hyeonbae.kim, st.kim}@khu.ac.kr</span><br>
+              <span class="publication-venue">NeurIPS 2026</span>
+            </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- TODO: Paper PDF link (pending): add href and remove disabled/aria-disabled -->
+                <span class="link-block">
+                  <a class="external-link button is-normal is-rounded is-dark" disabled aria-disabled="true" title="Paper PDF (link pending)">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
                     </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
+                <!-- TODO: arXiv link (pending): add href and remove disabled/aria-disabled -->
+                <span class="link-block">
+                  <a class="external-link button is-normal is-rounded is-dark" disabled aria-disabled="true" title="arXiv (link pending)">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
 
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
+                <span class="link-block">
+                  <a href="https://github.com/cekkec/CoDeRNet" target="_blank" rel="noopener"
+                  class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
@@ -295,54 +224,59 @@
                   </a>
                 </span>
 
-                <!-- TODO: Update with your arXiv paper ID -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://drive.google.com/drive/folders/1YMWuIE8tzl2eswk3lShkfugSN3tzbtXw" target="_blank" rel="noopener"
                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+                    <span class="icon">
+                      <i class="fab fa-google-drive"></i>
+                    </span>
+                    <span>Weights</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="#bibtex" class="button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-bookmark"></i>
+                    </span>
+                    <span>BibTeX</span>
+                  </a>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
+<!-- Teaser figure -->
+<section class="hero teaser" id="overview">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
+      <figure class="figure">
+        <a class="figure-card zoomable" href="static/images/overview.png" title="Click to enlarge">
+          <img src="static/images/overview.png" alt="CoDeRNet architecture: shared encoder and fusion block, change detection branch, change captioning branch, and the Confidence-Decomposed Routing block" width="1783" height="1337" loading="eager">
+        </a>
+        <figcaption class="figure-caption"><strong>Overview of CoDeRNet.</strong> A shared encoder and fusion block produce multi-scale change features, which are projected into a change-detection branch (mask decoder) and a change-captioning branch (multi-scale token memory + Transformer decoder). The two branches exchange information through Confidence-Decomposed Routing (CoDeR), shown at the bottom.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
-<!-- End teaser video -->
+<!-- End teaser figure -->
 
 <!-- Paper abstract -->
-<section class="section hero is-light">
+<section class="section hero is-light" id="abstract">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
+          <!-- TODO: replace this draft with the camera-ready abstract -->
+          <p>Change detection and change captioning describe the same bi-temporal change in two forms, a pixel-level mask and a sentence. Although the two tasks are natural companions, naively sharing features between them does not guarantee a gain: features learned under pixel-level and sentence-level supervision are not complementary by themselves, and the key question is <em>when</em> and <em>to whom</em> information should be transferred.</p>
+          <p>We present <strong>CoDeRNet</strong>, a unified framework for joint change detection and change captioning on bi-temporal remote-sensing images. A shared change encoder produces multi-scale change features that are projected into two task-specific branches, and the branches exchange information through <strong>Confidence-Decomposed Routing (CoDeR)</strong>. CoDeR decomposes the routing decision into a receiver-side cue that marks where the target branch needs support and a sender-side cue that marks where the source branch is reliable; their product gates a lightweight residual transfer. Routing is applied in both directions, caption&nbsp;→&nbsp;detection and detection&nbsp;→&nbsp;caption, before the task decoders, so both representations and both routing cues are optimized end-to-end by the two task losses.</p>
+          <p>On LEVIR-MCI and WHU-CDC, CoDeRNet improves change localization over the strongest prior unified framework with statistically significant margins and reaches competitive or better captioning quality, while ablations show that explicitly modeling receiver-side need and sender-side reliability outperforms conventional interaction mechanisms.</p>
         </div>
       </div>
     </div>
@@ -351,145 +285,167 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
+<!-- Method -->
+<section class="section" id="method">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Confidence-Decomposed Routing</h2>
+        <div class="content has-text-justified">
+          <p>CoDeR decides, location by location, whether information from one task branch should be transferred into the other. Instead of a single interaction weight, the decision is decomposed into two learned confidence cues, one on each side of the transfer, and the transfer happens only where both agree.</p>
+        </div>
 
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="columns method-cards has-text-left">
+          <div class="column">
+            <div class="box">
+              <p class="heading">Receiver side</p>
+              <p class="title is-6 mb-2">Where is support needed?</p>
+              <p>A need-for-support map is estimated from the receiving branch. Regions where the receiver is already confident are protected from being overwritten.</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box">
+              <p class="heading">Sender side</p>
+              <p class="title is-6 mb-2">Where is the source reliable?</p>
+              <p>A reliability map is estimated from the sending branch. Only evidence the sender is confident about is allowed to travel.</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box">
+              <p class="heading">Conditional transfer</p>
+              <p class="title is-6 mb-2">Should transfer occur?</p>
+              <p>The routing mask combines need and reliability, and it gates a lightweight residual transfer of the source feature into the receiving branch.</p>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
 
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
+        <div class="content has-text-justified">
+          <p>Routing is applied in both directions, caption&nbsp;→&nbsp;detection and detection&nbsp;→&nbsp;caption, at designated feature levels before the task decoders. Complementarity is therefore defined operationally by the sender–receiver state rather than as an intrinsic property of a feature, and the detection and captioning representations, together with the routing cues, are optimized jointly through the two task losses without a separate post-hoc integration model.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
+<!-- End method -->
 
 
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
+<!-- Quantitative results -->
+<section class="section hero is-light" id="results">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Quantitative Results</h2>
+        <div class="content has-text-justified">
+          <p>Comparison with change detection methods, change captioning methods, and unified detection-and-captioning frameworks on the test splits of LEVIR-MCI and WHU-CDC. Bold marks the best score and underline the second best. The improvement in change localization over MCINet is statistically significant under paired bootstrap and McNemar tests on the same test images.</p>
+        </div>
       </div>
     </div>
-  </section>
-<!--End paper poster -->
 
+    <figure class="figure">
+      <a class="figure-card zoomable" href="static/images/table1_levir_mci.png" title="Click to enlarge">
+        <img src="static/images/table1_levir_mci.png" alt="Table 1: comparison on LEVIR-MCI with change detection, change captioning, and unified methods; CoDeRNet reaches 87.79 mIoU and the best captioning scores" width="2278" height="1051" loading="lazy">
+      </a>
+      <figcaption class="figure-caption"><strong>Table 1. LEVIR-MCI.</strong> 3-class mIoU (background / road / building) and captioning metrics. CoDeRNet obtains the best score on every metric among the compared methods.</figcaption>
+    </figure>
+
+    <figure class="figure">
+      <a class="figure-card zoomable" href="static/images/table2_whu_cdc.png" title="Click to enlarge">
+        <img src="static/images/table2_whu_cdc.png" alt="Table 2: comparison on WHU-CDC with change detection, change captioning, and unified methods; CoDeRNet reaches 90.25 IoU and the best METEOR, ROUGE-L, and CIDEr-D" width="2276" height="1039" loading="lazy">
+      </a>
+      <figcaption class="figure-caption"><strong>Table 2. WHU-CDC.</strong> Change-class IoU and captioning metrics. CoDeRNet achieves the best IoU, METEOR, ROUGE-L and CIDEr-D, and the second-best BLEU scores.</figcaption>
+    </figure>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <p class="table-note">ConvNeXt-Base backbone, single GPU, batch size 64 (16 per step with 4-step gradient accumulation), Adam, learning rate 1e-4, 150 epochs. The checkpoints are available on <a href="https://drive.google.com/drive/folders/1YMWuIE8tzl2eswk3lShkfugSN3tzbtXw" target="_blank" rel="noopener">Google Drive</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End quantitative results -->
+
+
+<!-- Qualitative results -->
+<section class="section" id="qualitative">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Qualitative Results</h2>
+      </div>
+    </div>
+
+    <figure class="figure">
+      <a class="figure-card zoomable" href="static/images/qualitative_levir_mci.png" title="Click to enlarge">
+        <img src="static/images/qualitative_levir_mci.png" alt="Qualitative comparison on LEVIR-MCI test images: inputs, ground-truth mask, MCINet, CoDeRNet, and the corresponding captions" width="2264" height="1200" loading="lazy">
+      </a>
+      <figcaption class="figure-caption">
+        <strong>LEVIR-MCI test examples compared with MCINet.</strong>
+        <span class="legend"><span class="legend-swatch is-background"></span>background</span>
+        <span class="legend"><span class="legend-swatch is-road"></span>road</span>
+        <span class="legend"><span class="legend-swatch is-building"></span>building</span>
+        Below each row, the ground-truth caption and the captions predicted by the two models are shown; road and building words are colored accordingly.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+<!-- End qualitative results -->
+
+
+<!-- Code and weights -->
+<section class="section hero is-light" id="code">
+  <div class="container is-max-desktop content">
+    <div class="bibtex-header">
+      <h2 class="title">Code and Weights</h2>
+      <button type="button" class="copy-bibtex-btn" onclick="copyCode(this, 'quickstart-code')" title="Copy the commands to clipboard">
+        <i class="fas fa-copy"></i>
+        <span class="copy-text">Copy</span>
+      </button>
+    </div>
+    <p>The official PyTorch implementation, the LEVIR-MCI preprocessing script, and the evaluation code are released at <a href="https://github.com/cekkec/CoDeRNet" target="_blank" rel="noopener">github.com/cekkec/CoDeRNet</a>. Training and evaluation of both datasets go through a single <code>--dataset</code> switch, and the paper hyperparameters are the defaults.</p>
+    <pre id="quickstart-code"><code>git clone https://github.com/cekkec/CoDeRNet.git &amp;&amp; cd CoDeRNet
+conda create -n codernet python=3.12 -y &amp;&amp; conda activate codernet
+pip install -r requirements.txt
+
+# put levir_mci.pth / whu_cdc.pth from Google Drive under ./checkpoints/
+python preprocess_levir_mci.py --captions_json &lt;LEVIR_MCI_ROOT&gt;/LevirCCcaptions.json --out_dir ./data/LEVIR_MCI
+python test.py --dataset levir --data_folder &lt;LEVIR_MCI_ROOT&gt;/images --list_path ./data/LEVIR_MCI
+python test.py --dataset whu   --data_folder &lt;WHU_CDC_ROOT&gt;/images   --caption_json &lt;WHU_CDC_ROOT&gt;/whuCCcaptions.json</code></pre>
+  </div>
+</section>
+<!-- End code and weights -->
 
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
+  <section class="section" id="bibtex">
     <div class="container is-max-desktop content">
       <div class="bibtex-header">
         <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+        <button type="button" class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
           <i class="fas fa-copy"></i>
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+      <!-- TODO: final title -->
+      <pre id="bibtex-code"><code>@inproceedings{cho2026codernet,
+  title     = {CoDeRNet: Confidence-Decomposed Routing for Joint Change Detection and Change Captioning},
+  author    = {Cho, Eunki and Kim, Hyeon Bae and Kim, Seong Tae},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2026}
 }</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
+
+
+<!-- Acknowledgements -->
+<section class="section" id="acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    <p class="acknowledgements">The data loading, the LEVIR-MCI preprocessing and the evaluation code are adapted from <a href="https://github.com/Chen-Yang-Liu/Change-Agent" target="_blank" rel="noopener">Change-Agent</a>; the captioning scorers come from <a href="https://github.com/tylin/coco-caption" target="_blank" rel="noopener">coco-caption</a>. LEVIR-MCI is available on <a href="https://huggingface.co/datasets/lcybuaa/LEVIR-MCI/tree/main" target="_blank" rel="noopener">Hugging Face</a> and WHU-CDC on <a href="https://www.kaggle.com/datasets/yuehaozhang1109/whu-cdc/data" target="_blank" rel="noopener">Kaggle</a>. The code is released under the MIT License.</p>
+  </div>
+</section>
+<!-- End acknowledgements -->
+  </main>
 
 
   <footer class="footer">
@@ -499,7 +455,10 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            CoDeRNet · NeurIPS 2026 · <a href="https://github.com/cekkec/CoDeRNet" target="_blank" rel="noopener">GitHub</a>
+          </p>
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
@@ -510,8 +469,15 @@
   </div>
 </footer>
 
+<!-- Figure lightbox: click a figure to enlarge it, click the enlarged image to toggle full resolution -->
+<div class="modal" id="figure-modal" role="dialog" aria-modal="true" aria-label="Enlarged figure">
+  <div class="modal-background"></div>
+  <div class="modal-content"></div>
+  <button type="button" class="modal-close is-large" aria-label="Close"></button>
+</div>
+
 <!-- Statcounter tracking code -->
-  
+
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->

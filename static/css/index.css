@@ -750,4 +750,183 @@ a:focus {
 }
 
 
+/* ===== CoDeRNet project page additions ===== */
+
+/* A .container directly inside a .hero (flex column) is sized to its content because of its
+   auto margins, so a wide <pre> would stretch it past the viewport; keep it at the hero width. */
+.hero > .container {
+  width: 100%;
+}
+
+/* Bulma makes links inside .hero.is-light inherit the text color; keep in-text links visible */
+.hero.is-light .content a:not(.button),
+.hero.is-light .table-note a {
+  color: var(--primary-color) !important;
+}
+
+.hero.is-light .content a:not(.button):hover,
+.hero.is-light .table-note a:hover {
+  color: var(--primary-hover) !important;
+}
+
+/* Hero: subtitle under the short title, e-mail line, links that are not public yet */
+.publication-subtitle {
+  color: var(--text-secondary) !important;
+  line-height: 1.4 !important;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.publication-email {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.button.is-dark[disabled] {
+  pointer-events: none;
+}
+
+/* Figures: same card look as the template's carousel items; click to enlarge */
+.figure + .figure {
+  margin-top: 3rem;
+}
+
+.figure-card {
+  display: block;
+  padding: 1rem;
+  background: var(--background-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  cursor: zoom-in;
+}
+
+.figure-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.figure-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+.figure-caption {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.figure-caption strong {
+  color: var(--text-primary);
+}
+
+.legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-right: 0.9rem;
+  white-space: nowrap;
+}
+
+.legend-swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  border: 1px solid rgb(0 0 0 / 0.15);
+}
+
+.legend-swatch.is-background { background: #000; }
+.legend-swatch.is-road { background: #ffd400; }
+.legend-swatch.is-building { background: #e3211d; }
+
+.table-note {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* Method: three cue cards */
+.method-cards {
+  margin-top: 0.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.method-cards .box {
+  height: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.method-cards .heading {
+  color: var(--primary-color);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.method-cards .box p:last-child {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.acknowledgements {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* Figure lightbox (above the scroll-to-top button) */
+#figure-modal {
+  z-index: 1001;
+}
+
+#figure-modal .modal-content {
+  width: auto;
+  max-width: 96vw;
+  max-height: 94vh;
+  margin: 0 auto;
+}
+
+#figure-modal img {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 92vh;
+  background: var(--background-primary);
+  border-radius: var(--border-radius);
+  cursor: zoom-in;
+}
+
+#figure-modal.is-zoomed img {
+  max-width: none;
+  max-height: none;
+  cursor: zoom-out;
+}
+
+@media screen and (max-width: 768px) {
+  .publication-subtitle {
+    font-size: 1.15rem !important;
+  }
+
+  .figure-card {
+    padding: 0.5rem;
+  }
+
+  .figure-caption {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+}
+
+
 

@@ -31,45 +31,91 @@ document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         const dropdown = document.getElementById('moreWorksDropdown');
         const button = document.querySelector('.more-works-btn');
-        dropdown.classList.remove('show');
-        button.classList.remove('active');
+        if (dropdown) dropdown.classList.remove('show');
+        if (button) button.classList.remove('active');
     }
 });
 
+// Copy the text of a code block (by element id) to the clipboard
+function copyCode(button, elementId) {
+    const codeElement = document.getElementById(elementId);
+    const copyText = button.querySelector('.copy-text');
+
+    if (!codeElement) return;
+
+    function showCopied() {
+        button.classList.add('copied');
+        copyText.textContent = 'Cop';
+
+        setTimeout(function() {
+            button.classList.remove('copied');
+            copyText.textContent = 'Copy';
+        }, 2000);
+    }
+
+    // Fallback for older browsers and non-secure contexts
+    function fallbackCopy() {
+        const textArea = document.createElement('textarea');
+        textArea.value = codeElement.textContent;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        showCopied();
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(codeElement.textContent).then(showCopied).catch(function(err) {
+            console.error('Failed to copy: ', err);
+            fallbackCopy();
+        });
+    } else {
+        fallbackCopy();
+    }
+}
+
 // Copy BibTeX to clipboard
 function copyBibTeX() {
-    const bibtexElement = document.getElementById('bibtex-code');
-    const button = document.querySelector('.copy-bibtex-btn');
-    const copyText = button.querySelector('.copy-text');
-    
-    if (bibtexElement) {
-        navigator.clipboard.writeText(bibtexElement.textContent).then(function() {
-            // Success feedback
-            button.classList.add('copied');
-            copyText.textContent = 'Cop';
-            
-            setTimeout(function() {
-                button.classList.remove('copied');
-                copyText.textContent = 'Copy';
-            }, 2000);
-        }).catch(function(err) {
-            console.error('Failed to copy: ', err);
-            // Fallback for older browsers
-            const textArea = document.createElement('textarea');
-            textArea.value = bibtexElement.textContent;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-            
-            button.classList.add('copied');
-            copyText.textContent = 'Cop';
-            setTimeout(function() {
-                button.classList.remove('copied');
-                copyText.textContent = 'Copy';
-            }, 2000);
-        });
+    copyCode(document.querySelector('#bibtex .copy-bibtex-btn'), 'bibtex-code');
+}
+
+// Figure lightbox: open a.zoomable links in a modal instead of navigating to the image
+function setupFigureZoom() {
+    const modal = document.getElementById('figure-modal');
+    if (!modal) return;
+    const modalImg = document.createElement('img');
+    modalImg.alt = '';
+    modalImg.title = 'Click to toggle full resolution';
+    modal.querySelector('.modal-content').appendChild(modalImg);
+
+    function closeModal() {
+        modal.classList.remove('is-active', 'is-zoomed');
+        document.documentElement.classList.remove('is-clipped');
     }
+
+    document.querySelectorAll('a.zoomable').forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const img = link.querySelector('img');
+            modalImg.src = link.href;
+            modalImg.alt = img ? img.alt : '';
+            modal.classList.add('is-active');
+            document.documentElement.classList.add('is-clipped');
+        });
+    });
+
+    // Click the enlarged image to toggle between fit-to-screen and full resolution
+    modalImg.addEventListener('click', function() {
+        modal.classList.toggle('is-zoomed');
+    });
+
+    modal.querySelectorAll('.modal-background, .modal-close').forEach(function(el) {
+        el.addEventListener('click', closeModal);
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') closeModal();
+    });
 }
 
 // Scroll to top functionality
@@ -138,5 +184,8 @@ $(document).ready(function() {
     
     // Setup video autoplay for carousel
     setupVideoCarouselAutoplay();
+
+    // Click-to-enlarge for figures
+    setupFigureZoom();
 
 })

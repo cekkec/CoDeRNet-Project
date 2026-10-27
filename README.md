@@ -1,80 +1,144 @@
-# Academic Project Page Template
+# CoDeRNet Project Page
 
-> **Update (September 2025)**: This template has been modernized with better design, SEO, and mobile support. For the original version, see the [original-version branch](https://github.com/eliahuhorwitz/Academic-project-page-template/tree/original-version).
+Project page of **CoDeRNet** (NeurIPS 2026): joint change detection and change captioning on bi-temporal remote-sensing images with Confidence-Decomposed Routing.
 
-A clean, responsive template for academic project pages.
+- Website: https://cekkec.github.io/CoDeRNet-Project/
+- Code: https://github.com/cekkec/CoDeRNet
 
-
-Example project pages built using this template are:
-- https://horwitz.ai/probex
-- https://vision.huji.ac.il/probegen
-- https://horwitz.ai/mother
-- https://horwitz.ai/spectral_detuning
-- https://vision.huji.ac.il/ladeda
-- https://vision.huji.ac.il/dsire
-- https://horwitz.ai/podd
-- https://dreamix-video-editing.github.io
-- https://horwitz.ai/conffusion
-- https://horwitz.ai/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad
-- https://vision.huji.ac.il/deepsim
+The page is plain static HTML/CSS/JS (no build step) based on the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template) (commit `d38af1c`, September 2025).
 
 
+## Folder structure
 
-## Start using the template
-To start using the template click on `Use this Template`.
+```
+CoDeRNet-Project/
+├── index.html                  # the whole page (all text, links, BibTeX, meta tags)
+├── .nojekyll                   # serve files as-is on GitHub Pages (no Jekyll processing)
+├── README.md
+└── static/
+    ├── css/
+    │   ├── index.css           # template styles; page-specific rules at the end ("CoDeRNet project page additions")
+    │   ├── bulma.min.css       # Bulma 0.9.1 (template)
+    │   └── ...                 # bulma-carousel / bulma-slider / Font Awesome (template)
+    ├── js/
+    │   ├── index.js            # template script + copy buttons + click-to-enlarge figures
+    │   └── ...                 # bulma-carousel / bulma-slider / Font Awesome (template)
+    ├── webfonts/               # Font Awesome 5.15.1 woff2 files (missing from the template)
+    └── images/
+        ├── overview.png              # teaser / architecture figure
+        ├── table1_levir_mci.png      # Table 1
+        ├── table2_whu_cdc.png        # Table 2
+        ├── qualitative_levir_mci.png # qualitative results
+        ├── social_preview.png        # 1200x630 link preview (Open Graph / Twitter), made from overview.png
+        ├── favicon.ico
+        └── apple-touch-icon.png
+```
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+All paths in `index.html` are relative (`static/...`), so the page works both at the site root and under the `/CoDeRNet-Project/` sub-path of GitHub Pages. Do not start resource paths with `/`.
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
 
-## What's New
+## Run locally
 
-- Modern, clean design with better mobile support
-- Improved SEO with proper meta tags and structured data
-- Performance improvements (lazy loading, optimized assets)
-- More Works dropdown
-- Copy button for BibTeX citations
-- Better accessibility
+```bash
+cd CoDeRNet-Project
+python3 -m http.server 8000
+# open http://localhost:8000/
+```
 
-## Components
+Opening `index.html` directly from disk also renders the page, but a local server is closer to GitHub Pages (and the copy buttons need it in some browsers).
 
-- Teaser video
-- Image carousel
-- YouTube video embedding
-- Video carousel
-- PDF poster viewer
-- BibTeX citation
 
-## Customization
+## Editing the content
 
-The HTML file has TODO comments showing what to replace:
+Everything is in `index.html`; each part of the page is a `<section>` with an id:
 
-- Paper title, authors, institution, conference
-- Links (arXiv, GitHub, etc.)
-- Abstract and descriptions  
-- Videos, images, and PDFs
-- Related works in the dropdown
-- Meta tags for SEO and social sharing
+| Section | id | Notes |
+|---|---|---|
+| Title, authors, venue, link buttons | (first `section.hero`) | |
+| Overview figure | `overview` | |
+| Abstract | `abstract` | |
+| Method (Confidence-Decomposed Routing) | `method` | three cue cards |
+| Quantitative results | `results` | Table 1 and Table 2 images |
+| Qualitative results | `qualitative` | |
+| Code and weights | `code` | quick-start commands with a copy button |
+| BibTeX | `bibtex` | |
+| Acknowledgements | `acknowledgements` | |
 
-### Meta Tags
-The template includes meta tags for better search engine visibility and social media sharing. These appear in the `<head>` section and help with:
-- Google Scholar indexing
-- Social media previews (Twitter, Facebook, LinkedIn)
-- Search engine optimization
+Open items are marked with `TODO` comments in `index.html` (`grep -n TODO index.html`):
 
-Create a 1200x630px social preview image at `static/images/social_preview.png`.
+1. **Full paper title** — hero title/subtitle, `citation_title`, the JSON-LD `headline`, and the BibTeX title.
+2. **Paper / arXiv links** — the two buttons are shown disabled ("link pending"). Add the `href` and remove `disabled aria-disabled="true"`, e.g.
+   ```html
+   <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" rel="noopener" class="external-link button is-normal is-rounded is-dark">
+   ```
+   and add `<meta name="citation_pdf_url" content="...">` once the PDF is public.
+3. **Abstract** — the current text is the draft from the previous page; replace it with the camera-ready abstract.
 
-## Tips
+If the title or description changes, also update the matching `<title>`, `description`, `og:*` and `twitter:*` meta tags at the top of `index.html`.
 
-- Compress images with [TinyPNG](https://tinypng.com)
-- Use YouTube for large videos (>10MB)  
-- Replace the favicon in `static/images/`
-- Works with GitHub Pages
+### Images
 
-## Acknowledgments
-Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
+1. Put the file in `static/images/` with a lowercase name without spaces or brackets (e.g. `ablation_routing.png`).
+2. Add a figure block; wrapping the image in `a.figure-card.zoomable` gives the card style and click-to-enlarge:
+   ```html
+   <figure class="figure">
+     <a class="figure-card zoomable" href="static/images/ablation_routing.png" title="Click to enlarge">
+       <img src="static/images/ablation_routing.png" alt="Short description of the figure" loading="lazy">
+     </a>
+     <figcaption class="figure-caption"><strong>Figure title.</strong> Caption text.</figcaption>
+   </figure>
+   ```
+3. To replace an existing figure, overwrite the file under the same name (and update the `width`/`height` attributes of its `<img>` if the aspect ratio changes).
 
-## Website License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+Keep single images below a few MB; GitHub Pages has a 1 GB site limit and large files slow down the page.
+
+
+## Publishing on GitHub Pages
+
+### 1. Create the repository (once)
+
+On GitHub, signed in as `cekkec`: **New repository** (https://github.com/new)
+
+- Repository name: `CoDeRNet-Project`
+- Visibility: **Public** (GitHub Pages on a free plan requires a public repository)
+- Leave "Add a README", ".gitignore" and "license" **unchecked** (the repository must be empty)
+
+### 2. Push
+
+```bash
+cd CoDeRNet-Project
+git remote add origin https://github.com/cekkec/CoDeRNet-Project.git
+git push -u origin main
+```
+
+GitHub asks for a username and a password; the password must be a personal access token (Settings → Developer settings → Personal access tokens) with write access to this repository, or use `gh auth login` / an SSH remote instead.
+
+### 3. Enable GitHub Pages (once)
+
+Repository → **Settings** → **Pages** (left sidebar, under "Code and automation") → **Build and deployment**
+
+- Source: **Deploy from a branch**
+- Branch: **main**, folder: **/ (root)** → **Save**
+
+The first deployment takes about a minute (progress in the **Actions** tab, workflow "pages build and deployment"). The site is then available at
+
+**https://cekkec.github.io/CoDeRNet-Project/**
+
+### Updating the site
+
+Edit, check locally, then
+
+```bash
+git add -A
+git commit -m "Update project page"
+git push
+```
+
+Every push to `main` redeploys the site automatically.
+
+
+## Credits and license
+
+- Page template: [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template) by Eliahu Horwitz, adopted from the [Nerfies](https://nerfies.github.io/) project page. The template asks to keep the link back to it in the footer, and the website is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/); keep the footer notice in `index.html`.
+- [Bulma](https://bulma.io) (MIT), [Font Awesome Free](https://fontawesome.com/license/free) 5.15.1 (icons CC BY 4.0, fonts SIL OFL 1.1, code MIT), [Academicons](https://jpswalsh.github.io/academicons/) (SIL OFL 1.1, loaded from jsDelivr), jQuery (MIT, loaded from Google Hosted Libraries).
+- The CoDeRNet code is released separately under the MIT License at https://github.com/cekkec/CoDeRNet.

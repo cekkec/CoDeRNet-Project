@@ -769,7 +769,7 @@ a:focus {
   color: var(--primary-hover) !important;
 }
 
-/* Hero: subtitle under the short title, e-mail line, links that are not public yet */
+/* Hero: subtitle under the short title, e-mail line */
 .publication-subtitle {
   color: var(--text-secondary) !important;
   line-height: 1.4 !important;
@@ -783,13 +783,13 @@ a:focus {
   color: var(--text-secondary);
 }
 
-.button.is-dark[disabled] {
-  pointer-events: none;
-}
-
 /* Figures: same card look as the template's carousel items; click to enlarge */
 .figure + .figure {
   margin-top: 3rem;
+}
+
+.method-figure {
+  margin-bottom: 2.25rem;
 }
 
 .figure-card {

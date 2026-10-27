@@ -25,11 +25,12 @@ CoDeRNet-Project/
     │   └── ...                 # bulma-carousel / bulma-slider / Font Awesome (template)
     ├── webfonts/               # Font Awesome 5.15.1 woff2 files (missing from the template)
     └── images/
-        ├── overview.png              # teaser / architecture figure
+        ├── overview1.png             # teaser: architecture overview
+        ├── overview2.png             # Method: Confidence-Decomposed Routing block
         ├── table1_levir_mci.png      # Table 1
         ├── table2_whu_cdc.png        # Table 2
         ├── qualitative_levir_mci.png # qualitative results
-        ├── social_preview.png        # 1200x630 link preview (Open Graph / Twitter), made from overview.png
+        ├── social_preview.png        # 1200x630 link preview (Open Graph / Twitter), made from overview1.png
         ├── favicon.ico
         └── apple-touch-icon.png
 ```
@@ -54,10 +55,10 @@ Everything is in `index.html`; each part of the page is a `<section>` with an id
 
 | Section | id | Notes |
 |---|---|---|
-| Title, authors, venue, link buttons | (first `section.hero`) | |
-| Overview figure | `overview` | |
+| Title, authors, venue, link buttons | (first `section.hero`) | Paper → arXiv 2610.34876 |
+| Overview figure | `overview` | `overview1.png` |
 | Abstract | `abstract` | |
-| Method (Confidence-Decomposed Routing) | `method` | three cue cards |
+| Method (Confidence-Decomposed Routing) | `method` | `overview2.png` and three cue cards |
 | Quantitative results | `results` | Table 1 and Table 2 images |
 | Qualitative results | `qualitative` | |
 | Code and weights | `code` | quick-start commands with a copy button |
@@ -67,12 +68,7 @@ Everything is in `index.html`; each part of the page is a `<section>` with an id
 Open items are marked with `TODO` comments in `index.html` (`grep -n TODO index.html`):
 
 1. **Full paper title** — hero title/subtitle, `citation_title`, the JSON-LD `headline`, and the BibTeX title.
-2. **Paper / arXiv links** — the two buttons are shown disabled ("link pending"). Add the `href` and remove `disabled aria-disabled="true"`, e.g.
-   ```html
-   <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" rel="noopener" class="external-link button is-normal is-rounded is-dark">
-   ```
-   and add `<meta name="citation_pdf_url" content="...">` once the PDF is public.
-3. **Abstract** — the current text is the draft from the previous page; replace it with the camera-ready abstract.
+2. **Abstract** — the current text is the draft from the previous page; replace it with the camera-ready abstract.
 
 If the title or description changes, also update the matching `<title>`, `description`, `og:*` and `twitter:*` meta tags at the top of `index.html`.
 

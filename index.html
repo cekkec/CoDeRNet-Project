@@ -7,8 +7,7 @@
   <!--
     TODO before the camera-ready release (search for "TODO" in this file):
       1. Full paper title: hero <h1>/subtitle, citation_title, JSON-LD headline, BibTeX title
-      2. Paper / arXiv links: the two disabled buttons in .publication-links (+ citation_pdf_url)
-      3. Abstract: replace the draft with the camera-ready abstract
+      2. Abstract: replace the draft with the camera-ready abstract
   -->
 
   <!-- Primary Meta Tags -->
@@ -45,13 +44,14 @@
   <meta name="twitter:image:alt" content="CoDeRNet architecture overview">
 
   <!-- Academic/Research Specific -->
-  <!-- TODO: citation_title = final paper title; add citation_pdf_url once the paper PDF is public -->
+  <!-- TODO: citation_title = final paper title -->
   <meta name="citation_title" content="CoDeRNet: Confidence-Decomposed Routing for Joint Change Detection and Change Captioning">
   <meta name="citation_author" content="Cho, Eunki">
   <meta name="citation_author" content="Kim, Hyeon Bae">
   <meta name="citation_author" content="Kim, Seong Tae">
   <meta name="citation_publication_date" content="2026">
   <meta name="citation_conference_title" content="Advances in Neural Information Processing Systems (NeurIPS)">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2610.34876">
 
   <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
@@ -63,7 +63,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
 
   <title>CoDeRNet — Confidence-Decomposed Routing for Change Detection and Captioning</title>
@@ -80,14 +79,12 @@
   <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
   <!-- Fallback for browsers that don't support preload -->
   <noscript>
     <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
 
   <!-- Fonts - Optimized loading -->
@@ -194,23 +191,13 @@
 
             <div class="column has-text-centered">
               <div class="publication-links">
-                <!-- TODO: Paper PDF link (pending): add href and remove disabled/aria-disabled -->
                 <span class="link-block">
-                  <a class="external-link button is-normal is-rounded is-dark" disabled aria-disabled="true" title="Paper PDF (link pending)">
+                  <a href="https://arxiv.org/abs/2610.34876" target="_blank" rel="noopener"
+                  class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
                     <span>Paper</span>
-                  </a>
-                </span>
-
-                <!-- TODO: arXiv link (pending): add href and remove disabled/aria-disabled -->
-                <span class="link-block">
-                  <a class="external-link button is-normal is-rounded is-dark" disabled aria-disabled="true" title="arXiv (link pending)">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
                   </a>
                 </span>
 
@@ -256,10 +243,10 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <figure class="figure">
-        <a class="figure-card zoomable" href="static/images/overview.png" title="Click to enlarge">
-          <img src="static/images/overview.png" alt="CoDeRNet architecture: shared encoder and fusion block, change detection branch, change captioning branch, and the Confidence-Decomposed Routing block" width="1783" height="1337" loading="eager">
+        <a class="figure-card zoomable" href="static/images/overview1.png" title="Click to enlarge">
+          <img src="static/images/overview1.png" alt="CoDeRNet architecture: shared encoder and fusion block, change detection branch, change captioning branch, and the routing between the two branches" width="1783" height="874" loading="eager">
         </a>
-        <figcaption class="figure-caption"><strong>Overview of CoDeRNet.</strong> A shared encoder and fusion block produce multi-scale change features, which are projected into a change-detection branch (mask decoder) and a change-captioning branch (multi-scale token memory + Transformer decoder). The two branches exchange information through Confidence-Decomposed Routing (CoDeR), shown at the bottom.</figcaption>
+        <figcaption class="figure-caption"><strong>Overview of CoDeRNet.</strong> A shared encoder and fusion block produce multi-scale change features, which are projected into a change-detection branch (mask decoder) and a change-captioning branch (multi-scale token memory + Transformer decoder). The two branches exchange information through Confidence-Decomposed Routing (CoDeR).</figcaption>
       </figure>
     </div>
   </div>
@@ -294,7 +281,17 @@
         <div class="content has-text-justified">
           <p>CoDeR decides, location by location, whether information from one task branch should be transferred into the other. Instead of a single interaction weight, the decision is decomposed into two learned confidence cues, one on each side of the transfer, and the transfer happens only where both agree.</p>
         </div>
+      </div>
+    </div>
 
+    <figure class="figure method-figure">
+      <a class="figure-card zoomable" href="static/images/overview2.png" title="Click to enlarge">
+        <img src="static/images/overview2.png" alt="Confidence-Decomposed Routing (CoDeR): the receiver-side need for support and the sender-side reliable evidence are combined into a routing mask that gates the transfer of the source feature into the target feature" width="1783" height="454" loading="lazy">
+      </a>
+    </figure>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
         <div class="columns method-cards has-text-left">
           <div class="column">
             <div class="box">

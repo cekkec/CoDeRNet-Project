@@ -65,12 +65,7 @@ Everything is in `index.html`; each part of the page is a `<section>` with an id
 | BibTeX | `bibtex` | |
 | Acknowledgements | `acknowledgements` | |
 
-Open items are marked with `TODO` comments in `index.html` (`grep -n TODO index.html`):
-
-1. **Full paper title** — hero title/subtitle, `citation_title`, the JSON-LD `headline`, and the BibTeX title.
-2. **Abstract** — the current text is the draft from the previous page; replace it with the camera-ready abstract.
-
-If the title or description changes, also update the matching `<title>`, `description`, `og:*` and `twitter:*` meta tags at the top of `index.html`.
+The title and abstract follow the arXiv version ([2610.34876](https://arxiv.org/abs/2610.34876)). If the title changes, update every copy of it: the hero subtitle, `<title>`, the `title` / `og:title` / `twitter:title` meta tags, `citation_title`, the JSON-LD `headline`, and the BibTeX entry. Optional extras (Twitter handles, a "More Works" list) are marked with `TODO (optional)` comments.
 
 ### Images
 

@@ -4,14 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!--
-    TODO before the camera-ready release (search for "TODO" in this file):
-      1. Full paper title: hero <h1>/subtitle, citation_title, JSON-LD headline, BibTeX title
-      2. Abstract: replace the draft with the camera-ready abstract
-  -->
-
   <!-- Primary Meta Tags -->
-  <meta name="title" content="CoDeRNet — Confidence-Decomposed Routing for Change Detection and Captioning">
+  <meta name="title" content="CoDeRNet: Selective Cross-Task Routing under Heterogeneous Supervision for Change Detection and Captioning">
   <meta name="description" content="CoDeRNet (NeurIPS 2026): joint change detection and change captioning on bi-temporal remote-sensing images with Confidence-Decomposed Routing.">
   <meta name="keywords" content="CoDeRNet, Confidence-Decomposed Routing, change detection, change captioning, remote sensing, bi-temporal images, LEVIR-MCI, WHU-CDC, NeurIPS 2026">
   <meta name="author" content="Eunki Cho, Hyeon Bae Kim, Seong Tae Kim">
@@ -22,7 +16,7 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="CoDeRNet">
-  <meta property="og:title" content="CoDeRNet — Confidence-Decomposed Routing for Change Detection and Captioning">
+  <meta property="og:title" content="CoDeRNet: Selective Cross-Task Routing under Heterogeneous Supervision for Change Detection and Captioning">
   <meta property="og:description" content="NeurIPS 2026. Joint change detection and change captioning on bi-temporal remote-sensing images.">
   <meta property="og:url" content="https://cekkec.github.io/CoDeRNet-Project/">
   <meta property="og:image" content="https://cekkec.github.io/CoDeRNet-Project/static/images/social_preview.png">
@@ -38,14 +32,13 @@
   <!-- Twitter -->
   <!-- TODO (optional): add twitter:site / twitter:creator if the lab or authors have handles -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CoDeRNet — Confidence-Decomposed Routing for Change Detection and Captioning">
+  <meta name="twitter:title" content="CoDeRNet: Selective Cross-Task Routing under Heterogeneous Supervision for Change Detection and Captioning">
   <meta name="twitter:description" content="NeurIPS 2026. Joint change detection and change captioning on bi-temporal remote-sensing images.">
   <meta name="twitter:image" content="https://cekkec.github.io/CoDeRNet-Project/static/images/social_preview.png">
   <meta name="twitter:image:alt" content="CoDeRNet architecture overview">
 
   <!-- Academic/Research Specific -->
-  <!-- TODO: citation_title = final paper title -->
-  <meta name="citation_title" content="CoDeRNet: Confidence-Decomposed Routing for Joint Change Detection and Change Captioning">
+  <meta name="citation_title" content="CoDeRNet: Selective Cross-Task Routing under Heterogeneous Supervision for Change Detection and Captioning">
   <meta name="citation_author" content="Cho, Eunki">
   <meta name="citation_author" content="Kim, Hyeon Bae">
   <meta name="citation_author" content="Kim, Seong Tae">
@@ -65,7 +58,7 @@
   <link rel="preconnect" href="https://ajax.googleapis.com">
 
 
-  <title>CoDeRNet — Confidence-Decomposed Routing for Change Detection and Captioning</title>
+  <title>CoDeRNet: Selective Cross-Task Routing under Heterogeneous Supervision for Change Detection and Captioning</title>
 
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
@@ -98,12 +91,11 @@
   <script defer src="static/js/index.js"></script>
 
   <!-- Structured Data for Academic Papers -->
-  <!-- TODO: headline = final paper title -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "CoDeRNet: Confidence-Decomposed Routing for Joint Change Detection and Change Captioning",
+    "headline": "CoDeRNet: Selective Cross-Task Routing under Heterogeneous Supervision for Change Detection and Captioning",
     "description": "CoDeRNet (NeurIPS 2026): joint change detection and change captioning on bi-temporal remote-sensing images with Confidence-Decomposed Routing.",
     "author": [
       {
@@ -174,9 +166,8 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <!-- TODO: replace with the full paper title -->
             <h1 class="title is-1 publication-title">CoDeRNet</h1>
-            <p class="subtitle is-4 publication-subtitle">Confidence-Decomposed Routing for Joint Change Detection and Change Captioning in Bi-temporal Remote-Sensing Images</p>
+            <p class="subtitle is-4 publication-subtitle">Selective Cross-Task Routing under Heterogeneous Supervision for Change Detection and Captioning</p>
             <div class="is-size-5 publication-authors">
               <span class="author-block">Eunki Cho,</span>
               <span class="author-block">Hyeon Bae Kim,</span>
@@ -260,10 +251,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <!-- TODO: replace this draft with the camera-ready abstract -->
-          <p>Change detection and change captioning describe the same bi-temporal change in two forms, a pixel-level mask and a sentence. Although the two tasks are natural companions, naively sharing features between them does not guarantee a gain: features learned under pixel-level and sentence-level supervision are not complementary by themselves, and the key question is <em>when</em> and <em>to whom</em> information should be transferred.</p>
-          <p>We present <strong>CoDeRNet</strong>, a unified framework for joint change detection and change captioning on bi-temporal remote-sensing images. A shared change encoder produces multi-scale change features that are projected into two task-specific branches, and the branches exchange information through <strong>Confidence-Decomposed Routing (CoDeR)</strong>. CoDeR decomposes the routing decision into a receiver-side cue that marks where the target branch needs support and a sender-side cue that marks where the source branch is reliable; their product gates a lightweight residual transfer. Routing is applied in both directions, caption&nbsp;→&nbsp;detection and detection&nbsp;→&nbsp;caption, before the task decoders, so both representations and both routing cues are optimized end-to-end by the two task losses.</p>
-          <p>On LEVIR-MCI and WHU-CDC, CoDeRNet improves change localization over the strongest prior unified framework with statistically significant margins and reaches competitive or better captioning quality, while ablations show that explicitly modeling receiver-side need and sender-side reliability outperforms conventional interaction mechanisms.</p>
+          <p>Change Detection &amp; Captioning (CDC) aims to jointly localize changed regions and describe their semantic content from bi-temporal remote sensing images. While recent approaches have demonstrated the effectiveness of unified modeling, they primarily rely on shared representations or jointly optimized architectures, leaving task-specific communication under heterogeneous supervision less explored. However, detection and captioning differ fundamentally in their supervision granularity, leading to heterogeneous representations with uneven reliability across tasks and spatial locations. In this paper, we reformulate CDC as a selective information routing problem between heterogeneous task branches, where the key challenge is to determine when and where information should be transferred. To this end, we propose CoDeRNet, a unified framework that preserves task-specific representations while enabling bidirectional exchange of complementary information. CoDeRNet introduces a Confidence-Decomposed Routing (CoDeR) mechanism, which decomposes the routing condition into receiver-side need for support and sender-side reliability cues to guide selective transfer. Experiments on LEVIR-MCI and WHU-CDC show that CoDeRNet achieves strong overall CDC performance, particularly improving caption generation while preserving competitive change localization. Extensive analyses further show that the benefits arise not merely from joint learning or generic cross-task communication, but from explicitly modeling selective cross-task information routing. These results highlight the importance of conditional information transfer for unified CDC under heterogeneous supervision.</p>
         </div>
       </div>
     </div>
@@ -422,9 +410,8 @@ python test.py --dataset whu   --data_folder &lt;WHU_CDC_ROOT&gt;/images   --cap
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <!-- TODO: final title -->
       <pre id="bibtex-code"><code>@inproceedings{cho2026codernet,
-  title     = {CoDeRNet: Confidence-Decomposed Routing for Joint Change Detection and Change Captioning},
+  title     = {CoDeRNet: Selective Cross-Task Routing under Heterogeneous Supervision for Change Detection and Captioning},
   author    = {Cho, Eunki and Kim, Hyeon Bae and Kim, Seong Tae},
   booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
   year      = {2026}

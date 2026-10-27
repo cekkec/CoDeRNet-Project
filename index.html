@@ -267,7 +267,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Confidence-Decomposed Routing</h2>
         <div class="content has-text-justified">
-          <p>CoDeR decides, location by location, whether information from one task branch should be transferred into the other. Instead of a single interaction weight, the decision is decomposed into two learned confidence cues, one on each side of the transfer, and the transfer happens only where both agree.</p>
+          <p>CoDeR selectively modulates cross-task information transfer at each spatial location. Rather than relying on a single interaction weight, it decomposes the routing condition into two learned cues: receiver-side need for support and sender-side reliability. Their multiplicative combination produces a soft routing mask that controls the strength of residual information transfer.</p>
         </div>
       </div>
     </div>
@@ -340,11 +340,19 @@
       <figcaption class="figure-caption"><strong>Table 2. WHU-CDC.</strong> Change-class IoU and captioning metrics. CoDeRNet achieves the best IoU, METEOR, ROUGE-L and CIDEr-D, and the second-best BLEU scores.</figcaption>
     </figure>
 
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <p class="table-note">The checkpoints are available on <a href="https://drive.google.com/drive/folders/1YMWuIE8tzl2eswk3lShkfugSN3tzbtXw" target="_blank" rel="noopener">Google Drive</a>.</p>
-      </div>
-    </div>
+    <figure class="figure is-narrow">
+      <a class="figure-card zoomable" href="static/images/abl1.png" title="Click to enlarge">
+        <img src="static/images/abl1.png" alt="Ablation of joint training and CoDeR: segmentation only, captioning only, joint training, and joint training with CoDeR, with mIoU, BLEU-4, METEOR, ROUGE-L and CIDEr-D" width="1135" height="241" loading="lazy">
+      </a>
+      <figcaption class="figure-caption">We examine the contributions of joint training and CoDeR to change detection and captioning performance.</figcaption>
+    </figure>
+
+    <figure class="figure is-narrow">
+      <a class="figure-card zoomable" href="static/images/abl2.png" title="Click to enlarge">
+        <img src="static/images/abl2.png" alt="Comparison of cross-task interaction operators: Co-Attn, Cross-Attn, Exchange, Gating, and CoDeR, with mIoU, BLEU-4, METEOR, ROUGE-L and CIDEr-D" width="833" height="222" loading="lazy">
+      </a>
+      <figcaption class="figure-caption">We compare CoDeR with alternative cross-task interaction operators to evaluate the effectiveness of selective information routing.</figcaption>
+    </figure>
   </div>
 </section>
 <!-- End quantitative results -->

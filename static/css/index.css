@@ -759,13 +759,11 @@ a:focus {
 }
 
 /* Bulma makes links inside .hero.is-light inherit the text color; keep in-text links visible */
-.hero.is-light .content a:not(.button),
-.hero.is-light .table-note a {
+.hero.is-light .content a:not(.button) {
   color: var(--primary-color) !important;
 }
 
-.hero.is-light .content a:not(.button):hover,
-.hero.is-light .table-note a:hover {
+.hero.is-light .content a:not(.button):hover {
   color: var(--primary-hover) !important;
 }
 
@@ -790,6 +788,13 @@ a:focus {
 
 .method-figure {
   margin-bottom: 2.25rem;
+}
+
+/* Small tables (ablations): keep them near their native width instead of upscaling */
+.figure.is-narrow {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .figure-card {
@@ -848,12 +853,6 @@ a:focus {
 .legend-swatch.is-road { background: #ffd400; }
 .legend-swatch.is-building { background: #e3211d; }
 .legend-swatch.is-change { background: #fff; }
-
-.table-note {
-  margin-top: 1.5rem;
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-}
 
 /* Method: three cue cards */
 .method-cards {

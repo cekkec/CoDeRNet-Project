@@ -29,6 +29,8 @@ CoDeRNet-Project/
         ├── overview2.png             # Method: Confidence-Decomposed Routing block
         ├── table1_levir_mci.png      # Table 1
         ├── table2_whu_cdc.png        # Table 2
+        ├── abl1.png                  # ablation: joint training and CoDeR
+        ├── abl2.png                  # ablation: cross-task interaction operators
         ├── qualitative_levir_mci.png # qualitative results, LEVIR-MCI
         ├── qualitative_whu.png       # qualitative results, WHU-CDC
         ├── khu_logo.png              # Kyung Hee University logo (end of page)
@@ -62,7 +64,7 @@ Everything is in `index.html`; each part of the page is a `<section>` with an id
 | Overview figure | `overview` | `overview1.png` |
 | Abstract | `abstract` | |
 | Method (Confidence-Decomposed Routing) | `method` | `overview2.png` and three cue cards |
-| Quantitative results | `results` | Table 1 and Table 2 images |
+| Quantitative results | `results` | Table 1 and Table 2 images, then the two ablation tables (`figure.is-narrow`) |
 | Qualitative results | `qualitative` | LEVIR-MCI and WHU-CDC figures |
 | BibTeX | `bibtex` | |
 | Acknowledgements | `acknowledgements` | |

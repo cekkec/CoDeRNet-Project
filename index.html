@@ -340,19 +340,22 @@
       <figcaption class="figure-caption"><strong>Table 2. WHU-CDC.</strong> Change-class IoU and captioning metrics. CoDeRNet achieves the best IoU, METEOR, ROUGE-L and CIDEr-D, and the second-best BLEU scores.</figcaption>
     </figure>
 
-    <figure class="figure is-narrow">
+    <!-- --aspect = image width / height, so both tables get the same height side by side -->
+    <div class="figure-row">
+    <figure class="figure" style="--aspect: 4.710">
       <a class="figure-card zoomable" href="static/images/abl1.png" title="Click to enlarge">
         <img src="static/images/abl1.png" alt="Ablation of joint training and CoDeR: segmentation only, captioning only, joint training, and joint training with CoDeR, with mIoU, BLEU-4, METEOR, ROUGE-L and CIDEr-D" width="1135" height="241" loading="lazy">
       </a>
       <figcaption class="figure-caption">We examine the contributions of joint training and CoDeR to change detection and captioning performance.</figcaption>
     </figure>
 
-    <figure class="figure is-narrow">
+    <figure class="figure" style="--aspect: 3.752">
       <a class="figure-card zoomable" href="static/images/abl2.png" title="Click to enlarge">
         <img src="static/images/abl2.png" alt="Comparison of cross-task interaction operators: Co-Attn, Cross-Attn, Exchange, Gating, and CoDeR, with mIoU, BLEU-4, METEOR, ROUGE-L and CIDEr-D" width="833" height="222" loading="lazy">
       </a>
       <figcaption class="figure-caption">We compare CoDeR with alternative cross-task interaction operators to evaluate the effectiveness of selective information routing.</figcaption>
     </figure>
+    </div>
   </div>
 </section>
 <!-- End quantitative results -->

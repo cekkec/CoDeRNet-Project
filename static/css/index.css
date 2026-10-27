@@ -790,11 +790,22 @@ a:focus {
   margin-bottom: 2.25rem;
 }
 
-/* Small tables (ablations): keep them near their native width instead of upscaling */
-.figure.is-narrow {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
+/* Two figures side by side (ablation tables). Each grows in proportion to its image
+   aspect ratio (--aspect) on top of the card padding, so both images get the same height. */
+.figure-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.figure-row .figure {
+  flex: var(--aspect, 1) 1 calc(2rem + 2px);
+  min-width: 0;
+}
+
+.figure-row .figure + .figure {
+  margin-top: 0;
 }
 
 .figure-card {
@@ -949,6 +960,17 @@ a:focus {
 
   .logo-row img {
     height: 44px;
+  }
+}
+
+/* Below the desktop breakpoint side-by-side tables get too small: stack them */
+@media screen and (max-width: 1023px) {
+  .figure-row {
+    display: block;
+  }
+
+  .figure-row .figure + .figure {
+    margin-top: 3rem;
   }
 }
 

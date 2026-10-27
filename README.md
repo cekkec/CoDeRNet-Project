@@ -64,7 +64,7 @@ Everything is in `index.html`; each part of the page is a `<section>` with an id
 | Overview figure | `overview` | `overview1.png` |
 | Abstract | `abstract` | |
 | Method (Confidence-Decomposed Routing) | `method` | `overview2.png` and three cue cards |
-| Quantitative results | `results` | Table 1 and Table 2 images, then the two ablation tables (`figure.is-narrow`) |
+| Quantitative results | `results` | Table 1 and Table 2 images, then the two ablation tables side by side (`.figure-row`, stacked below 1024px) |
 | Qualitative results | `qualitative` | LEVIR-MCI and WHU-CDC figures |
 | BibTeX | `bibtex` | |
 | Acknowledgements | `acknowledgements` | |

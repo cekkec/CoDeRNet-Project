@@ -847,6 +847,7 @@ a:focus {
 .legend-swatch.is-background { background: #000; }
 .legend-swatch.is-road { background: #ffd400; }
 .legend-swatch.is-building { background: #e3211d; }
+.legend-swatch.is-change { background: #fff; }
 
 .table-note {
   margin-top: 1.5rem;
@@ -881,6 +882,26 @@ a:focus {
 .acknowledgements {
   font-size: 0.95rem;
   color: var(--text-secondary);
+}
+
+/* Affiliation logos at the end of the page */
+.logos-section {
+  padding-top: 1rem;
+}
+
+.logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem 3.5rem;
+}
+
+.logo-row img {
+  height: 64px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 /* Figure lightbox (above the scroll-to-top button) */
@@ -925,6 +946,10 @@ a:focus {
   .figure-caption {
     font-size: 0.95rem;
     text-align: left;
+  }
+
+  .logo-row img {
+    height: 44px;
   }
 }
 

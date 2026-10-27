@@ -29,7 +29,10 @@ CoDeRNet-Project/
         ├── overview2.png             # Method: Confidence-Decomposed Routing block
         ├── table1_levir_mci.png      # Table 1
         ├── table2_whu_cdc.png        # Table 2
-        ├── qualitative_levir_mci.png # qualitative results
+        ├── qualitative_levir_mci.png # qualitative results, LEVIR-MCI
+        ├── qualitative_whu.png       # qualitative results, WHU-CDC
+        ├── khu_logo.png              # Kyung Hee University logo (end of page)
+        ├── ami_lab_logo.png          # Augmented Intelligence Lab logo (end of page)
         ├── social_preview.png        # 1200x630 link preview (Open Graph / Twitter), made from overview1.png
         ├── favicon.ico
         └── apple-touch-icon.png
@@ -60,10 +63,10 @@ Everything is in `index.html`; each part of the page is a `<section>` with an id
 | Abstract | `abstract` | |
 | Method (Confidence-Decomposed Routing) | `method` | `overview2.png` and three cue cards |
 | Quantitative results | `results` | Table 1 and Table 2 images |
-| Qualitative results | `qualitative` | |
-| Code and weights | `code` | quick-start commands with a copy button |
+| Qualitative results | `qualitative` | LEVIR-MCI and WHU-CDC figures |
 | BibTeX | `bibtex` | |
 | Acknowledgements | `acknowledgements` | |
+| Logos | `logos` | Kyung Hee University and lab logos |
 
 The title and abstract follow the arXiv version ([2610.34876](https://arxiv.org/abs/2610.34876)). If the title changes, update every copy of it: the hero subtitle, `<title>`, the `title` / `og:title` / `twitter:title` meta tags, `citation_title`, the JSON-LD `headline`, and the BibTeX entry. Optional extras (Twitter handles, a "More Works" list) are marked with `TODO (optional)` comments.
 

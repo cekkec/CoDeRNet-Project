@@ -371,37 +371,25 @@
         Below each row, the ground-truth caption and the captions predicted by the two models are shown; road and building words are colored accordingly.
       </figcaption>
     </figure>
+
+    <figure class="figure">
+      <a class="figure-card zoomable" href="static/images/qualitative_whu.png" title="Click to enlarge">
+        <img src="static/images/qualitative_whu.png" alt="Qualitative comparison on WHU-CDC test images: inputs, ground-truth mask, MCINet, CoDeRNet, and the corresponding captions" width="2117" height="1650" loading="lazy">
+      </a>
+      <figcaption class="figure-caption">
+        <strong>WHU-CDC test examples compared with MCINet.</strong>
+        <span class="legend"><span class="legend-swatch is-background"></span>background</span>
+        <span class="legend"><span class="legend-swatch is-change"></span>change</span>
+        Below each row, the ground-truth caption and the captions predicted by the two models are shown.
+      </figcaption>
+    </figure>
   </div>
 </section>
 <!-- End qualitative results -->
 
 
-<!-- Code and weights -->
-<section class="section hero is-light" id="code">
-  <div class="container is-max-desktop content">
-    <div class="bibtex-header">
-      <h2 class="title">Code and Weights</h2>
-      <button type="button" class="copy-bibtex-btn" onclick="copyCode(this, 'quickstart-code')" title="Copy the commands to clipboard">
-        <i class="fas fa-copy"></i>
-        <span class="copy-text">Copy</span>
-      </button>
-    </div>
-    <p>The official PyTorch implementation, the LEVIR-MCI preprocessing script, and the evaluation code are released at <a href="https://github.com/cekkec/CoDeRNet" target="_blank" rel="noopener">github.com/cekkec/CoDeRNet</a>. Training and evaluation of both datasets go through a single <code>--dataset</code> switch, and the paper hyperparameters are the defaults.</p>
-    <pre id="quickstart-code"><code>git clone https://github.com/cekkec/CoDeRNet.git &amp;&amp; cd CoDeRNet
-conda create -n codernet python=3.12 -y &amp;&amp; conda activate codernet
-pip install -r requirements.txt
-
-# put levir_mci.pth / whu_cdc.pth from Google Drive under ./checkpoints/
-python preprocess_levir_mci.py --captions_json &lt;LEVIR_MCI_ROOT&gt;/LevirCCcaptions.json --out_dir ./data/LEVIR_MCI
-python test.py --dataset levir --data_folder &lt;LEVIR_MCI_ROOT&gt;/images --list_path ./data/LEVIR_MCI
-python test.py --dataset whu   --data_folder &lt;WHU_CDC_ROOT&gt;/images   --caption_json &lt;WHU_CDC_ROOT&gt;/whuCCcaptions.json</code></pre>
-  </div>
-</section>
-<!-- End code and weights -->
-
-
 <!--BibTex citation -->
-  <section class="section" id="bibtex">
+  <section class="section hero is-light" id="bibtex">
     <div class="container is-max-desktop content">
       <div class="bibtex-header">
         <h2 class="title">BibTeX</h2>
@@ -411,7 +399,8 @@ python test.py --dataset whu   --data_folder &lt;WHU_CDC_ROOT&gt;/images   --cap
         </button>
       </div>
       <pre id="bibtex-code"><code>@inproceedings{cho2026codernet,
-  title     = {CoDeRNet: Selective Cross-Task Routing under Heterogeneous Supervision for Change Detection and Captioning},
+  title     = {CoDeRNet: Selective Cross-Task Routing under Heterogeneous Supervision
+               for Change Detection and Captioning},
   author    = {Cho, Eunki and Kim, Hyeon Bae and Kim, Seong Tae},
   booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
   year      = {2026}
@@ -429,6 +418,18 @@ python test.py --dataset whu   --data_folder &lt;WHU_CDC_ROOT&gt;/images   --cap
   </div>
 </section>
 <!-- End acknowledgements -->
+
+
+<!-- Affiliation logos -->
+<section class="section logos-section" id="logos">
+  <div class="container is-max-desktop">
+    <div class="logo-row">
+      <img src="static/images/khu_logo.png" alt="Kyung Hee University" width="1795" height="515" loading="lazy">
+      <img src="static/images/ami_lab_logo.png" alt="Augmented Intelligence Lab" width="2950" height="565" loading="lazy">
+    </div>
+  </div>
+</section>
+<!-- End affiliation logos -->
   </main>
 
 
